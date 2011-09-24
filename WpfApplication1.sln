@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication1", "WpfApplication1.csproj", "{ACAF4721-D7CF-40E7-BBBA-B54BCEB3FD4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5145AAB8-973A-4D22-8DBD-23B4CDBB3A6F}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		WpfApplication1.vsmdi = WpfApplication1.vsmdi
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBtest1", "MBtest1\MBtest1.csproj", "{18F403C8-0915-458C-AA39-133B028285A7}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = WpfApplication1.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		gogo|Any CPU = gogo|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACAF4721-D7CF-40E7-BBBA-B54BCEB3FD4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACAF4721-D7CF-40E7-BBBA-B54BCEB3FD4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACAF4721-D7CF-40E7-BBBA-B54BCEB3FD4E}.gogo|Any CPU.ActiveCfg = gogo|Any CPU
+		{ACAF4721-D7CF-40E7-BBBA-B54BCEB3FD4E}.gogo|Any CPU.Build.0 = gogo|Any CPU
+		{ACAF4721-D7CF-40E7-BBBA-B54BCEB3FD4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACAF4721-D7CF-40E7-BBBA-B54BCEB3FD4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18F403C8-0915-458C-AA39-133B028285A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18F403C8-0915-458C-AA39-133B028285A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18F403C8-0915-458C-AA39-133B028285A7}.gogo|Any CPU.ActiveCfg = gogo|Any CPU
+		{18F403C8-0915-458C-AA39-133B028285A7}.gogo|Any CPU.Build.0 = gogo|Any CPU
+		{18F403C8-0915-458C-AA39-133B028285A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18F403C8-0915-458C-AA39-133B028285A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
