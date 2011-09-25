@@ -3,35 +3,35 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         
-    Title="TBP" Height="400" Width="546" Loaded="Window_Loaded" WindowStyle="SingleBorderWindow" Padding="4" Background="Gray" Foreground="White" Closing="Window_Closed" ResizeMode="NoResize" >
-    <Grid Background="#FF907A7A" OpacityMask="#FF907A7A" MouseWheel="gridMouseWheel" KeyDown="keyDown"  >
+    Title="TBP" Height="474" Width="469" Loaded="Window_Loaded" WindowStyle="SingleBorderWindow" Padding="4" Background="#FF907A7A" Foreground="#FF907A7A" Closing="Window_Closed" ResizeMode="CanResize" OpacityMask="#FF907A7A" BorderBrush="#FF907A7A">
+    <Grid Background="#FF907A7A" OpacityMask="#FF907A7A" MouseWheel="gridMouseWheel" KeyDown="keyDown" Width="515">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="124*" />
+            <RowDefinition Height="311*" />
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="387*" />
-            <ColumnDefinition Width="137*" />
+            <ColumnDefinition Width="316*" />
+            <ColumnDefinition Width="56*" />
+            <ColumnDefinition Width="61" />
         </Grid.ColumnDefinitions>
-        <ComboBox Height="27" HorizontalAlignment="Left" Margin="0,5,0,0" Name="comboBox1" VerticalAlignment="Top" Width="396" SelectionChanged="comboBox1_SelectionChanged" Grid.ColumnSpan="2" >
+        <ComboBox Height="27" HorizontalAlignment="Left" Margin="17,2,0,0" Name="comboBox1" VerticalAlignment="Top" Width="316" SelectionChanged="comboBox1_SelectionChanged" OpacityMask="Black" Background="#FF907A7A" Foreground="Black" BorderBrush="#FF907A7A">
             
 
         </ComboBox>
-        <TextBox Height="26" Name="textBox1" VerticalAlignment="Top" Background="#FFA9BFA9" BorderBrush="Black" Margin="0,5,19,0" />
-        <MediaElement Height="51" HorizontalAlignment="Left" Margin="0,243,0,0" Name="mediaElement1" LoadedBehavior="Manual" MediaEnded="mediaElement1_MediaEnded" VerticalAlignment="Top" Width="6"  />
-        <Button Content="Search" Height="25" HorizontalAlignment="Left" Margin="26,5,0,0" Name="button2" VerticalAlignment="Top" Width="107" Click="button2_Click" Background="#FF907A7A" Padding="0" HorizontalContentAlignment="Center" FlowDirection="LeftToRight" OpacityMask="#FF907A7A" BorderBrush="Black" Grid.Column="1" />
-        <Button Content="Play" Height="29" HorizontalAlignment="Left" Margin="351,39,0,0" Name="button1" VerticalAlignment="Top" Width="45" Background="#FF907A7A" BorderBrush="Black" Click="button1_Click" Grid.ColumnSpan="2" />
-        <TabControl HorizontalAlignment="Left" Margin="12,100,0,51" Name="tabControl1" Width="326" >
-            
-            <TabItem Header="Playlist" Name="tabItem2" Background="#FF907A7A" BorderBrush="Black">
-                <ListBox Height="183" Name="listBox1" Width="318" SelectionChanged="listBox1_SelectionChanged_1" Background="#FF907A7A" />
-            </TabItem>
-
-
-        </TabControl>
-        <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="170,324,0,0" Name="savePL" VerticalAlignment="Top" Width="70" Click="savePL_Click" />
-        <Button Content="Load" Height="23" HorizontalAlignment="Left" Margin="246,324,0,0" Name="loadPL" VerticalAlignment="Top" Width="75" Click="loadPL_Click" />
-        <Button Background="#FF907A7A" BorderBrush="Black" Content="Pause" Height="29" HorizontalAlignment="Left" Margin="26,39,0,0" Name="button4" VerticalAlignment="Top" Width="45" Click="button4_Click" Grid.Column="1" />
-        <Button Content="Clear" Height="23" HorizontalAlignment="Left" Margin="88,324,0,0" Name="button5" VerticalAlignment="Top" Width="76" Click="button5_Click" />
-        <CheckBox Content="Random" Height="16" HorizontalAlignment="Left" Margin="351,74,0,0" Name="checkBox1" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="76" />
-        <Slider Height="185" HorizontalAlignment="Left" Margin="365,117,0,0" Name="slider1" VerticalAlignment="Top" Width="24" Orientation="Vertical" IsDirectionReversed="False" AutoToolTipPlacement="None" ValueChanged="sliderValueChanged" Maximum="1" Value="0.5" LargeChange="0.05" SmallChange="0.05" Grid.ColumnSpan="2" />
-        <Button Content="Shuffle" Height="23" HorizontalAlignment="Left" Margin="17,324,0,0" Name="button6" VerticalAlignment="Top" Width="65" Click="button6_Click" />
-        <CheckBox Content="Repeat" Grid.ColumnSpan="2" Height="17" HorizontalAlignment="Left" Margin="351,94,0,0" Name="checkBox2" VerticalAlignment="Top" Width="57"  />
+        <TextBox Height="33" Name="textBox1" VerticalAlignment="Top" Background="#FF907A7A" BorderBrush="#FF010101" Margin="0,0,73,0" OpacityMask="#FF907A7A" />
+        <MediaElement Height="51" HorizontalAlignment="Left" Margin="0,119,0,0" Name="mediaElement1" LoadedBehavior="Manual" MediaEnded="mediaElement1_MediaEnded" VerticalAlignment="Top" Width="6" Grid.Row="1" />
+        <Button Content="Search" Height="28" HorizontalAlignment="Right" Margin="0,1,8,0" Name="button2" VerticalAlignment="Top" Width="107" Click="button2_Click" Background="#FF907A7A" Padding="0" HorizontalContentAlignment="Center" FlowDirection="LeftToRight" OpacityMask="#FF907A7A" BorderBrush="Black" Grid.ColumnSpan="2" />
+        <Button Content="Play" Height="29" HorizontalAlignment="Left" Margin="161,39,0,0" Name="button1" VerticalAlignment="Top" Width="45" Background="#FF907A7A" BorderBrush="Black" Click="button1_Click" />
+        
+                <ListBox Name="listBox1" SelectionChanged="listBox1_SelectionChanged_1" Background="#FF907A7A" Margin="9,67,86,48" OpacityMask="#FF907A7A" BorderBrush="#FF907A7A" Grid.RowSpan="2" />
+           
+        <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="161,269,0,0" Name="savePL" VerticalAlignment="Top" Width="70" Click="savePL_Click" Grid.Row="1" />
+        <Button Content="Load" Height="23" HorizontalAlignment="Left" Margin="237,269,0,0" Name="loadPL" VerticalAlignment="Top" Width="63" Click="loadPL_Click" Grid.Row="1" />
+        <Button Background="#FF907A7A" BorderBrush="Black" Content="Pause" Height="29" HorizontalAlignment="Left" Margin="221,39,0,0" Name="button4" VerticalAlignment="Top" Width="45" Click="button4_Click" />
+        <Button Content="Clear" Height="23" HorizontalAlignment="Left" Margin="80,269,0,0" Name="button5" VerticalAlignment="Top" Width="76" Click="button5_Click" Grid.Row="1" />
+        <CheckBox Content="Random" Height="16" HorizontalAlignment="Left" Margin="12,52,0,0" Name="checkBox1" VerticalAlignment="Top" Width="76" />
+        <Slider Height="185" HorizontalAlignment="Left" Margin="363,6,0,0" Name="slider1" VerticalAlignment="Top" Width="24" Orientation="Vertical" IsDirectionReversed="False" AutoToolTipPlacement="None" ValueChanged="sliderValueChanged" Maximum="1" Value="0.5" LargeChange="0.05" SmallChange="0.05" Grid.ColumnSpan="2" Grid.Row="1" />
+        <Button Content="Shuffle" Height="23" HorizontalAlignment="Left" Margin="9,269,0,0" Name="button6" VerticalAlignment="Top" Width="65" Click="button6_Click" Grid.Row="1" />
+        <CheckBox Content="Repeat" Height="17" HorizontalAlignment="Left" Margin="88,51,0,0" Name="checkBox2" VerticalAlignment="Top" Width="57"  />
     </Grid>
 </Window>

@@ -6,11 +6,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5145AAB8-973A-4D22-8DBD-23B4CDBB3A6F}"
 	ProjectSection(SolutionItems) = preProject
 		Local.testsettings = Local.testsettings
+		D:\Downloads\wpfthemes-63656(2)\WPF.Themes\ExpressionDark\Theme.xaml = D:\Downloads\wpfthemes-63656(2)\WPF.Themes\ExpressionDark\Theme.xaml
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 		WpfApplication1.vsmdi = WpfApplication1.vsmdi
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBtest1", "MBtest1\MBtest1.csproj", "{18F403C8-0915-458C-AA39-133B028285A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{E0215B8F-984F-47BA-927B-88EC751B8698}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
