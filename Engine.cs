@@ -16,7 +16,7 @@ using System.Windows.Threading;
 using System.Windows.Media.Animation;
 
 
-namespace TestPlayer
+namespace TBP
 {
     class Engine
     {

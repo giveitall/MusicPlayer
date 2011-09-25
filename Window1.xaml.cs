@@ -20,7 +20,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Runtime.Serialization;
 
-namespace TestPlayer
+namespace TBP
 {
     /// <summary>
     /// Логика взаимодействия для Window1.xaml
@@ -30,7 +30,7 @@ namespace TestPlayer
         Artist testArtist= new Artist();
         
          Playlist myPl = new Playlist();
-        String token;
+       public String token;
          int n;
          string topOfArtist;
          
@@ -43,7 +43,13 @@ namespace TestPlayer
         public Window1()
         {
             InitializeComponent();
-            webBr.Navigate("http://api.vkontakte.ru/oauth/authorize?client_id=13&scope=audio&redirect_uri=http://api.vkontakte.ru/blank.html&response_type=token");
+            Window2 wndow2 = new Window2();
+           // wndow2.InitializeComponent();
+           // webBr.Navigate("http://api.vkontakte.ru/oauth/authorize?client_id=13&scope=audio&redirect_uri=http://api.vkontakte.ru/blank.html&response_type=token");
+            this.Hide();
+            wndow2.Show();
+            //token = wndow2.token;
+            //label1.Content = token;
             
         }
         
@@ -57,7 +63,7 @@ namespace TestPlayer
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-           if (textBox1.Text.Substring(0, 6) == "artist")
+          /* if (textBox1.Text.Substring(0, 6) == "artist")
             {
                 testArtist = Engine.ParseArtist(textBox1.Text);
                 int i = 0;
@@ -73,7 +79,7 @@ namespace TestPlayer
                     i++;
 
                 }
-            }
+            }*/
            if (textBox1.Text.Substring(0, 3) == "top")
            {
                myPl.Add(Engine.ParseTop(textBox1.Text));
@@ -194,14 +200,15 @@ namespace TestPlayer
             }
         }
 
-        private void webBr_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+       /* private void webBr_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
-
+            //webBr.Visible = false;
+            
             Regex reg = new Regex(@"=(.*)&");
             string[] json = reg.Match(webBr.Url.ToString()).Value.Replace("=", "").Split('&');
             token = json[0];
             
-        }
+        }*/
 
         private void savePL_Click(object sender, RoutedEventArgs e)
         {
@@ -250,6 +257,11 @@ namespace TestPlayer
         private void mediaElement1_MediaEnded(object sender, RoutedEventArgs e)
         {
             int next;
+            if ((bool)checkBox2.IsChecked)
+            {
+                PlaySong(myPl.ListOfSongs[listBox1.SelectedIndex]);
+                return;
+            }
             if ((bool)checkBox1.IsChecked)
             {
                 Random rnd = new Random();
@@ -275,24 +287,11 @@ namespace TestPlayer
             //songSlider.Value = mediaElement1.Position.TotalSeconds;
         
         }
-        private void slider2_GiveFeedback(object sender, System.Windows.GiveFeedbackEventArgs e)
-        {
-            TimeSpan ts = new TimeSpan(0, 0, 0, 0, (int)songSlider.Value);
-            mediaElement1.Position = ts;
-        }
+        
 
-        private void mediaOpened(object sender, RoutedEventArgs e)
-        {
-            songSlider.Maximum = mediaElement1.NaturalDuration.TimeSpan.TotalMilliseconds;
-        }
+        
 
-        private void valuechang(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            
-                TimeSpan ts = new TimeSpan(0, 0, 0, 0, (int)songSlider.Value);
-            mediaElement1.Position = ts;
-            
-        }
+        
 
         private void button5_Click(object sender, RoutedEventArgs e)
         {
@@ -348,6 +347,8 @@ namespace TestPlayer
             }
             writer.Close();
         }
+
+       
 
 
         

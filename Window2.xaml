@@ -1,0 +1,11 @@
+﻿<Window x:Class="TBP.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        Title="Window2" Height="500" Width="600" Closed="w2Closed">
+    <Grid>
+        <WindowsFormsHost>
+            <wf:WebBrowser x:Name="webBr" Height="1237" Width="492" Navigated="webBr_Navigated" Visible="True" />
+        </WindowsFormsHost>
+    </Grid>
+</Window>

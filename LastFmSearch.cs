@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 
 
-namespace TestPlayer
+namespace TBP
 {
     class LastFmSearch
     {

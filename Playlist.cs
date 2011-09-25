@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Controls;
 
-namespace TestPlayer
+namespace TBP
 {
     [Serializable()]
 
