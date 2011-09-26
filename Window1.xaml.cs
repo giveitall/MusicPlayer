@@ -86,6 +86,11 @@ namespace TBP
                listBox1.Items.Clear();
                myPl.Play(listBox1);
            }
+           if (textBox1.Text.Substring(0, 3) == "sim")
+           {
+               myPl.Add(Engine.ParseSimilar(textBox1.Text));
+               myPl.Play(listBox1);
+           }
          //  TextWriter tempWriter = new StreamWriter(@"C:\Users\vlad\test.txt",true);
            //tempWriter.WriteLine(textBox1.Text);
            //tempWriter.Close();

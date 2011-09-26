@@ -4,7 +4,7 @@
         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         
     Title="TBP" Height="474" Width="469" Loaded="Window_Loaded" WindowStyle="SingleBorderWindow" Padding="4" Background="#FF907A7A" Foreground="#FF907A7A" Closing="Window_Closed" ResizeMode="CanResize" OpacityMask="#FF907A7A" BorderBrush="#FF907A7A">
-    <Grid Background="#FF907A7A" OpacityMask="#FF907A7A" MouseWheel="gridMouseWheel" KeyDown="keyDown" Width="515">
+    <Grid Background="#FF907A7A" OpacityMask="#FF907A7A" MouseWheel="gridMouseWheel"  Width="515">
         <Grid.RowDefinitions>
             <RowDefinition Height="124*" />
             <RowDefinition Height="311*" />

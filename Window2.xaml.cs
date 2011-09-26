@@ -30,7 +30,7 @@ namespace TBP
         public Window2()
         {
             InitializeComponent();
-            webBr.Navigate("http://api.vkontakte.ru/oauth/authorize?client_id=13&scope=audio&redirect_uri=http://api.vkontakte.ru/blank.html&response_type=token");
+            webBr.Navigate("http://api.vkontakte.ru/oauth/authorize?client_id=2623840&scope=audio&redirect_uri=http://api.vkontakte.ru/blank.html&response_type=token");
         }
 
         private void webBr_Navigated(object sender, System.Windows.Forms.WebBrowserNavigatedEventArgs e)

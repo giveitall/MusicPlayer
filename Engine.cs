@@ -51,6 +51,28 @@ namespace TBP
             }
             return myPl2;
         }
+        public static Playlist ParseSimilar(string query)
+        {
+            Playlist myPl2 = new Playlist();
+            Regex r = new Regex(@".*");
+            Regex r1 = new Regex(@"[0-9]*");
+            Regex r2 = new Regex(@":.*");
+            string[] s1;
+            string[] s2;
+            string[] simSearch = r.Match(query).Value.Replace("similar:", "").Split('+');
+            foreach (string s in simSearch)
+            {
+                List<Song> temp = new List<Song>();
+
+                temp = LastFmSearch.SimArtist(s);
+                foreach (Song s6 in temp)
+                {
+                    myPl2.AddSong(s6);
+                }
+
+            }
+            return myPl2;
+        }
         public static void ShowAlbums(Artist artist)
         {
             ListBox lbx = new ListBox();
