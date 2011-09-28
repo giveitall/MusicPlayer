@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBtest1", "MBtest1\MBtest1.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{E0215B8F-984F-47BA-927B-88EC751B8698}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{36550235-EA8F-48A3-BF3F-9106B491792F}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = WpfApplication1.vsmdi
@@ -37,6 +39,12 @@ Global
 		{18F403C8-0915-458C-AA39-133B028285A7}.gogo|Any CPU.Build.0 = gogo|Any CPU
 		{18F403C8-0915-458C-AA39-133B028285A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18F403C8-0915-458C-AA39-133B028285A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36550235-EA8F-48A3-BF3F-9106B491792F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36550235-EA8F-48A3-BF3F-9106B491792F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36550235-EA8F-48A3-BF3F-9106B491792F}.gogo|Any CPU.ActiveCfg = Release|Any CPU
+		{36550235-EA8F-48A3-BF3F-9106B491792F}.gogo|Any CPU.Build.0 = Release|Any CPU
+		{36550235-EA8F-48A3-BF3F-9106B491792F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36550235-EA8F-48A3-BF3F-9106B491792F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

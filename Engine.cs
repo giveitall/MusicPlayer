@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Windows.Media.Animation;
+using System.Diagnostics;
+using System.IO;
 
 
 namespace TBP
@@ -42,12 +44,12 @@ namespace TBP
             {
                 List<Song> temp = new List<Song>();
 
-                temp=LastFmSearch.TopTracks(Convert.ToInt32(r1.Match(s).Value), r2.Match(s).Value.Replace(":", ""));
+                temp = LastFmSearch.TopTracks(Convert.ToInt32(r1.Match(s).Value), r2.Match(s).Value.Replace(":", ""));
                 foreach (Song s6 in temp)
                 {
                     myPl2.AddSong(s6);
                 }
-                
+
             }
             return myPl2;
         }
@@ -57,20 +59,43 @@ namespace TBP
             Regex r = new Regex(@".*");
             Regex r1 = new Regex(@"[0-9]*");
             Regex r2 = new Regex(@":.*");
-            string[] s1;
-            string[] s2;
+            
             string[] simSearch = r.Match(query).Value.Replace("similar:", "").Split('+');
             foreach (string s in simSearch)
             {
-                List<Song> temp = new List<Song>();
+               // 
+                string[] tempp = new string[5];
 
-                temp = LastFmSearch.SimArtist(s);
-                foreach (Song s6 in temp)
+                Stopwatch sw = new Stopwatch();
+                Stopwatch sw2 = new Stopwatch();
+                sw.Start();
+                tempp= LastFmSearch.SimArtist(s);
+               // sw.Stop();
+               //writer.WriteLine(sw.ElapsedMilliseconds);
+                
+              // sw.Start();
+                foreach (string s1 in tempp)
                 {
-                    myPl2.AddSong(s6);
-                }
+                    //List<Song> temp = new List<Song>();
+                  //  sw2.Start();
+                   // temp = LastFmSearch.TopTracks(5, s1);
+                    
+                   sw2.Start();
+                   foreach (Song s6 in LastFmSearch.TopTracks(5, s1))
+                    {
+                        myPl2.AddSong(s6);
+                        
+                    }
+                  
 
+                }
+                sw.Stop();
+                TextWriter writer = new StreamWriter(@"C:\debug.txt", true);
+               writer.WriteLine("Total:"+sw.ElapsedMilliseconds);
+                writer.WriteLine("Toptrack summ" + sw2.ElapsedMilliseconds);
+               writer.Close();
             }
+            
             return myPl2;
         }
         public static void ShowAlbums(Artist artist)

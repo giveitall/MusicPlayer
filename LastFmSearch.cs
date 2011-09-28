@@ -5,7 +5,8 @@ using System.Text;
 using System.Net;
 using System.Xml;
 using System.Xml.Linq;
-
+using System.IO;
+using System.Diagnostics;
 
 
 
@@ -15,6 +16,9 @@ namespace TBP
     {
         public static List<Song> TopTracks(int n, string groupName)
         {
+            TextWriter writer = new StreamWriter(@"C:\debug.txt", true);
+            Stopwatch sw3 = new Stopwatch();
+            sw3.Start();
             XDocument ttdoc = XDocument.Load("http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=" + groupName + "&limit=" + n.ToString() + "&api_key=b25b959554ed76058ac220b7b2e0a026");
             
 
@@ -22,37 +26,39 @@ namespace TBP
             
             foreach (XElement el in ttdoc.Root.Element("toptracks").Elements("track"))
             {
-                 string temp = el.Element("name").Value; 
+                string temp = el.Element("name").Value;
 
                 string temp2 = el.Element("duration").Value;
                 Song s = new Song(groupName, "", temp, temp2, 0, "");
                 TopTrackList.Add(s);
             }
+            sw3.Stop();
+            writer.WriteLine("toptrack 1 iter:" + sw3.ElapsedMilliseconds);
+            writer.Close();
             return TopTrackList;
 
 
 
         }
-        public static List<Song> SimArtist(string groupName)
+        public static string[] SimArtist(string groupName)
         {
-            XDocument ttdoc = XDocument.Load("http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" + groupName + "&limit=" + 5.ToString() + "&api_key=b25b959554ed76058ac220b7b2e0a026");
+            XDocument ttdoc = XDocument.Load("http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" + groupName + "&limit=" + 5 + "&api_key=b25b959554ed76058ac220b7b2e0a026");
 
-
+            string[] temp=new string[5]; int i=0;
             List<Song> SimTrackList = new List<Song>();
 
             foreach (XElement el in ttdoc.Root.Element("similarartists").Elements("artist"))
             {
-                string temp = el.Element("name").Value;
+               // string temp = el.Element("name").Value;
+                temp[i] = el.Element("name").Value;
+                i++;
               //  SimTrackList. += TopTracks(5, temp);
-                foreach(Song s in TopTracks(5,temp))
-                    SimTrackList.Add(s);
-                {
-                }
+                
                // string temp2 = el.Element("duration").Value;
               //  Song s = new Song(groupName, "", temp, temp2, 0, "");
                 //TopTrackList.Add(s);
             }
-            return SimTrackList;
+            return temp;
 
 
 

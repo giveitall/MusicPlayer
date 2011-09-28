@@ -56,3 +56,4 @@ using System.Windows;
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("testMB")]
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("MBtest1")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("TestProject1")]
